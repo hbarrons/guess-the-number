@@ -31,18 +31,19 @@ const game = {
       );
   },
   //function to alert depending on outcome of the guess
-  render: function (guess) {
-    if (guess === secretNum) {
-      return `Congratulations! ${this.secretNum} was the correct number! It took you ${this.prevGuesses.length} tries to pick the correct number.`
-    } else if (guess < this.secretNum) {
-      return `Too low, guess again! The number is between ${this.prevGuesses[0]} and ${this.biggestNum}`
-    } else {
-      return `Too high, guess again! The number is between ${this.biggestNum} and ${this.prevGuesses[0]}.`
-    }
-  }
+  // render: function (guess) {
+  //   if (guess === secretNum) {
+  //     return `Congratulations! ${this.secretNum} was the correct number! It took you ${this.prevGuesses.length} tries to pick the correct number.`
+  //   } else if (guess < this.secretNum) {
+  //     return `Too low, guess again! The number is between ${this.prevGuesses[0]} and ${this.biggestNum}`
+  //   } else {
+  //     return `Too high, guess again! The number is between ${this.biggestNum} and ${this.prevGuesses[0]}.`
+  //   }
+  // }
+  
 }
-
-
+console.log("test")
+game.play();
 
 
 
