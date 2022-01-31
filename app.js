@@ -7,13 +7,18 @@ const game = {
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
+      console.log(this.secretNum)
       // do/while loop to add player guess to prevGuess
       do {
-        this.prevGuesses.unshift(this.getGuess())
+        this.prevGuesses.unshift(this.getGuess());
+        console.log(this.getGuess());
+    
+        console.log(this.prevGuesses)
         this.render()
       } while (
         this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum
       );
+      console.log(this.secretNum)
   },
   // getGuess - do/while loop to provide player a prompt to submit guess until they guess correctly
   getGuess: function (){
@@ -33,7 +38,7 @@ const game = {
   },
   // function to alert depending on outcome of the guess
   render: function () {
-    let guessOutcome
+    let guessOutcome = null
     if (this.prevGuesses[this.prevGuesses.length - 1] === secretNum) {
       guessOutcome = `Congratulations! ${this.secretNum} was the correct number! It took you ${this.prevGuesses.length} tries to pick the correct number.`
     } else if (this.prevGuesses[this.prevGuesses.length - 1] < this.secretNum) {
@@ -41,11 +46,11 @@ const game = {
     } else {
       guessOutcome = `Too high, guess again! The number is between ${this.biggestNum} and ${this.prevGuesses[0]}.`
     }
+    alert(guessOutcome)
   },
   
 }
 
-game.play();
 
-
+game.play()
 
