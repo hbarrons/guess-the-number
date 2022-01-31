@@ -1,11 +1,3 @@
-// 1. Allow the player to continually be prompted to enter their guess at the secret number until they guess correctly.
-// 2. If the player has an incorrect guess, display an alert message that informs the player:
-//     - Whether their guess is too high or too low, and…
-//     - A list of all the previously guessed numbers (without showing the square brackets of an array).
-// 3. If the player has guessed the secret number:
-//     - Display an alert message that congrats the player and informs them of how many guesses they took.
-//     - End the gameplay.
-
 const game = {
   title: 'Guess the Number!',
   biggestNum: 100,
@@ -17,29 +9,27 @@ const game = {
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
       // do/while loop to add player guess to prevGuess
       do {
-        this.prevGuesses.unshift(this.getGuess)
+        this.prevGuesses.unshift(this.getGuess())
         this.render()
       } while (
         this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum
       );
-      // invoke getGuess
-      getGuess();
   },
   // getGuess - do/while loop to provide player a prompt to submit guess until they guess correctly
   getGuess: function (){
-    let guess = null
+    let guess = null;
     // the do will give the player the prompt
     do {
       guess = parseInt(
         prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}. Good luck!`)
-      )
+      );
     }
     // the while loop will set the condition for the loop to end (when guess = secretNum)
     while (
       guess === NaN,
       guess !== this.secretNum
       );
-      return guess
+      return guess;
   },
   // function to alert depending on outcome of the guess
   render: function () {
@@ -55,7 +45,7 @@ const game = {
   
 }
 
-game.play()
+game.play();
 
 
 
